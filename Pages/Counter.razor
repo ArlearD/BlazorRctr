@@ -6,7 +6,33 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<br />
+
+<textarea>
+@foreach (var mes in chat)
+{
+    @mes
+    <br />
+}
+</textarea>
+
+<input type="text" @bind="newMessage"/>
+
+<button class="btn btn-primary" @onclick="SendMessage">Отправить</button>
+
+
 @code {
+
+    static List<string> chat = new List<string>();
+    string newMessage = null;
+
+    private void SendMessage()
+    {
+        chat.Add(newMessage);
+        newMessage = null;
+        
+    }
+
     private static int currentCount = 0;
 
     private void IncrementCount()
