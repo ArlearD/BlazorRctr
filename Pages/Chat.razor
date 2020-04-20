@@ -33,12 +33,12 @@
 
 @code{
     private HubConnection hubConnection;
-    private string userInput = null;
-    private string messageInput = null;
+    private string userInput = "";
+    private string messageInput = "";
     private List<string> messages = new List<string>();
 
     protected override async Task OnInitializedAsync()
-    {
+    {   
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/chatHub"))
             .Build();
@@ -49,6 +49,8 @@
             messages.Add(encodedMsg);
             StateHasChanged();
         });
+
+        await hubConnection.StartAsync();
     }
 
     Task Send() =>
