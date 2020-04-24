@@ -10,7 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BlazorRctr.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace BlazorRctr
 {
