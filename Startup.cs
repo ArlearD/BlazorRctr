@@ -32,9 +32,9 @@ namespace BlazorRctr
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSignalR();
-            services.AddDbContext<ApplicationContext>(options =>
-                options.UseSqlServer(connection));
-            services.AddControllersWithViews();
+            //services.AddDbContext<ApplicationContext>(options =>
+            //    options.UseSqlServer(connection));
+            //services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
